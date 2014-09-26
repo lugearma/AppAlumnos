@@ -5,7 +5,7 @@ class Direccion{
 	private int nExt, nInt;
 
 	//Constructores
-	public Direccion{
+	public Direccion(){
 		calle();
 		colonia();
 		delegacion();
@@ -34,19 +34,19 @@ class Direccion{
 		nExt = Teclado.entero("Ingresa el numero exterior: ");
 	}
 
-	public listar(){
-		System.out.println("Impirme todos los datos, falta concatenarlos")
+	public void listar(){
+		System.out.println("Calle: " + calle + "\n" + "Colonia: " + colonia + "\n" + "Delegacion: " + delegacion + "\n" + "No. Exterior" + nExt + "\n" + "No. Interior" + nInt);
 	}
 
 	public void actualizarDomicilio(){
 		//Esta parte se recomineda se haga con la clase menu que hemos hecho
 		
-
+		int opc;
 		do{
 
-			int opc = Teclado.entero("\tSelecciona la opcion deseada\n1)Calle\n2)Colonia\n3)Delegacion\n4)Numero Exterior\n5)Numero Interior\n6)Salir");
+			opc = Teclado.entero("\tSelecciona la opcion deseada\n1)Calle\n2)Colonia\n3)Delegacion\n4)Numero Exterior\n5)Numero Interior\n6)Salir\n");
 
-			switch(opc):
+			switch(opc){
 				case 1:
 					calle();
 				break;
@@ -70,6 +70,7 @@ class Direccion{
 				default:
 					System.out.println("Opcion no valida :(");
 				break;
+			}
 		}while(opc != 6 );
 	}
 }

@@ -1,23 +1,27 @@
-class ArregloReal {
+class ArregloReal{
 
 	// Atributos
 	// No inicializar atributos en esta parte, para eso esta el constructor
-	private double []arreglo;
+	private double arreglo[];
 	private int indice;		//Ultima casilla ocupada
 
 	// Constructores
-	public ArregloEnteros(){
+	public ArregloReal(int max){
 		arreglo = new double[max];	//Le damos la dimencion al arreglo
 		indice = -1;
 	}
 
 	// Metodos
-	private void insertar(int dato){
+
+	//Insertar nuevo dato
+	public void insertar(double dato){
 		compara(dato);
 		//indice += 1;
 		//arreglo[indice] = dato;
 	}
 
+
+	//Valida si hay espcio en el arreglo
 	private boolean validaEspacio(){
 		if(indice == arreglo.length-1)
 			return false;
@@ -25,7 +29,9 @@ class ArregloReal {
 		//return (indice<arreglo.length-1);
 	}
 
-	private void listar(){
+
+	//Lista todos los elementos del arreglo
+	public void listar(){
 		if (indice == -1)
 			System.out.println("No hay elmentos que mostrar :(");
 		else{
@@ -35,7 +41,9 @@ class ArregloReal {
 		}
 	}
 
-	private int buscarDato(int dato){	//Si lo pongo desde el main, tengo que recibir pos y empezar desde pos
+
+	//Busca el dato que le pasemos
+	private int buscarDato(double dato){	//Si lo pongo desde el main, tengo que recibir pos y empezar desde pos
 		for(int i = 0; i <= indice; i++)
 			if(arreglo[i] == dato)
 				return i;
@@ -43,27 +51,32 @@ class ArregloReal {
 			return -1;
 	}
 
+
+	//Actualiza un dato pasando la posicion (conbinemos el de buscar y se pasa el dato no la posicion)
 	private void actualizar(int pos){
-		arreglo[pos] = Teclado.entero("Ingresa el dato nuevo");
+		arreglo[pos] = Teclado.entero("Ingresa el dato nuevo: ");
 	}
 
-	private int borrar(int pos){
-		int aux = arreglo[pos];
+
+	//Borra un dato pasando la posicion
+	private double borrar(int pos){
+		double aux = arreglo[pos];
 		arreglo[pos] = arreglo[indice];
 		indice--;
 		return aux;
 	}
-	//Metodos para ordenar
 
-	private void intercambiarDatos(int v[], int i, int j){
+
+	//Metodo que intercambia dato, usado por los metodos de ordenamiento
+	private void intercambiarDatos(double v[], int i, int j){
     	//Guardamos el valor de i y lo asignamos despues
-    	int aux = v[i];
+    	double aux = v[i];
     	v[i] = v[j];
     	v[j] = aux;
   	}
 
-  	//Metodo que ordena
 
+  	//Metodo que ordena
 	private void ordenar(){
 		int im,i,j; //Indice menor, osea guarda la posicion del menor y hasta que acabe no lo asigna
     	for(i = 0; i < indice; i++ ){
@@ -77,9 +90,9 @@ class ArregloReal {
     	}
 	}
 
-	//Metodo que comprueba si hay dato repetido
 
-	public void compara(int dato){
+	//Metodo que comprueba si hay dato repetido
+	public void compara(double dato){
 		//dato = Teclado.entero("Ingresa el dato");
 		if(buscarDato(dato) != -1)
 			System.out.println("El dato ya esxiste");
@@ -89,10 +102,14 @@ class ArregloReal {
 		}
 	}
 
+
+	//Metodo que me dice en que posicion se encuentra el ultimo dato
 	public int regresaIndice(){
 		return indice;
 	}
 
+
+	//Metodo que calcula promedio
 	public double calculaProm(){
 
 		double prom = 0;

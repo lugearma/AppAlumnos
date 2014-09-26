@@ -2,16 +2,16 @@ class Ordenamiento {
 
   private void intercambiarDatos(Alumno v[], int i, int j){
    
-    int aux = v[i].getCuenta();
-    v[i].getCuenta() = v[j].getCuenta();
-    v[j].getCuenta() = aux;
+    Alumno aux = v[i];
+    v[i] = v[j];
+    v[j] = aux;
   }
 
-	public void sortSeleccion(Alumno v[]){
+	public void sortSeleccion(Alumno v[], int indice){
     int im,i,j;
-    for(i = 0; i < v.length-1; i++ ){
+    for(i = 0; i < indice; i++ ){
       im = i;
-      for(j = i + 1; j < v.length; j++ ){
+      for(j = i + 1; j <= indice; j++ ){
         if(v[j].getCuenta() < v[im].getCuenta())
           im = j;
       }

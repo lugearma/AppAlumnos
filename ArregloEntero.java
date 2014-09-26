@@ -5,7 +5,7 @@ class ArregloEntero {
 	private int indice;		//Ultima casilla ocupada
 
 	// Constructores
-	public ArregloEnteros( int max ){
+	public ArregloEntero( int max ){
 		arreglo = new int[max];	//Le damos la dimencion al arreglo
 		indice = -1;
 	}
@@ -24,6 +24,7 @@ class ArregloEntero {
 		//return (indice<arreglo.length-1);
 	}
 
+	//Lista todos los datos
 	public void listar(){
 		if (indice == -1)
 			System.out.println("No hay elmentos que mostrar :(");
@@ -34,6 +35,7 @@ class ArregloEntero {
 		}
 	}
 
+	//Lista el dato segun la posicion que le pasemos(no sirve mucho per bueno)
 	public void listar(int pos){
 		System.out.println(arreglo[pos]);
 	}

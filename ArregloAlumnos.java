@@ -6,7 +6,7 @@ class ArregloAlumnos {
 	private Ordenamiento ordena;
 
 	//Constructor
-	public ArregloEnteros( int max ){
+	public ArregloAlumnos( int max ){
 		//Le damos la dimencion al arreglo, pero de tipo alumnos
 		arreglo = new Alumno[max];
 		indice = -1;
@@ -21,11 +21,12 @@ class ArregloAlumnos {
 	}
 
 	public void insertar(int dato){
-		
 		indice += 1;
 		arreglo[indice] = dato;
 	}
 
+
+	//Lista todos los datos
 	public void listar(){
 		int i;
 		for (i=0;i<=indice ;i++ )
@@ -33,6 +34,7 @@ class ArregloAlumnos {
 		Syste.out.println();
 	}
 
+	//Lista solo un dato
 	public void listar(int pos){
 		arreglo[pos].listar();
 	}
@@ -60,7 +62,6 @@ class ArregloAlumnos {
 
 	public void ordenar(){
 		ordena = new Ordenamiento();
-		ordena.sortSeleccion(arreglo);
-		//v[i].getCuenta Compara con los numeros de cuenta
+		ordena.sortSeleccion(arreglo, indice);
 	}
 }
