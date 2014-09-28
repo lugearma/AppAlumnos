@@ -22,7 +22,7 @@ class ArregloReal{
 
 
 	//Valida si hay espcio en el arreglo
-	private boolean validaEspacio(){
+	public boolean validaEspacio(){
 		if(indice == arreglo.length-1)
 			return false;
 		return true;
@@ -53,13 +53,13 @@ class ArregloReal{
 
 
 	//Actualiza un dato pasando la posicion (conbinemos el de buscar y se pasa el dato no la posicion)
-	private void actualizar(int pos){
+	public	 void actualizar(int pos){
 		arreglo[pos] = Teclado.entero("Ingresa el dato nuevo: ");
 	}
 
 
 	//Borra un dato pasando la posicion
-	private double borrar(int pos){
+	public double borrar(int pos){
 		double aux = arreglo[pos];
 		arreglo[pos] = arreglo[indice];
 		indice--;

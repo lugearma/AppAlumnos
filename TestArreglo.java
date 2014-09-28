@@ -10,10 +10,10 @@ class TestArreglo {
 
 		//Crear el objeto de manera individual
 		Alumno alu;
-		max = Teclado.entero("Dame el maximo del arreglo:");
+		max = Teclado.entero("Dame el maximo del arreglo: ");
 
 		//Aqui se crea el objeto, y le pasamos el tamaño del arreglo
-		miArreglo = new ArregloEnteros(max);	
+		miArreglo = new ArregloAlumnos(max);	
 		System.out.println("1)Insertar\n2)Borrar\n3)Buscar\n4)Actualizar\n5)Listar\n6)Salir\nOpcion:\n");
 		maxTels = Teclado.entero("Dame el maximo de numeros de telefono: ");
 		maxCalifs = Teclado.entero("Dame el maximo de calificaciones: ");

@@ -20,7 +20,7 @@ class ArregloAlumnos {
 		//return (indice<arreglo.length-1);
 	}
 
-	public void insertar(Alumno dato){
+	public void insertar(int dato){
 		indice += 1;
 		arreglo[indice] = dato;
 	}
@@ -31,7 +31,7 @@ class ArregloAlumnos {
 		int i;
 		for (i=0;i<=indice ;i++ )
 			arreglo[i].listar();
-		System.out.println();
+		Syste.out.println();
 	}
 
 	//Lista solo un dato
