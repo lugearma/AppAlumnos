@@ -44,7 +44,7 @@ class Direccion{
 		int opc;
 		do{
 
-			opc = Teclado.entero("\tSelecciona la opcion deseada\n1)Calle\n2)Colonia\n3)Delegacion\n4)Numero Exterior\n5)Numero Interior\n6)Salir\n");
+			opc = Teclado.entero("\tQue dato de la direccion quieres actualizar:\n1)Calle\n2)Colonia\n3)Delegacion\n4)Numero Exterior\n5)Numero Interior\n6)Salir\n");
 
 			switch(opc){
 				case 1:

@@ -10,19 +10,16 @@ class TestArreglo {
 
 		//Crear el objeto de manera individual
 		Alumno alu;
-		max = Teclado.entero("Dame el maximo del arreglo: ");
+		max = Teclado.entero("Cuantos alumnos quieres: ");
 
 		//Aqui se crea el objeto, y le pasamos el tamaño del arreglo
 		miArreglo = new ArregloAlumnos(max);	
-		System.out.println("1)Insertar\n2)Borrar\n3)Buscar\n4)Actualizar\n5)Listar\n6)Salir\nOpcion:\n");
-		maxTels = Teclado.entero("Dame el maximo de numeros de telefono: ");
-		maxCalifs = Teclado.entero("Dame el maximo de calificaciones: ");
-
-
+		maxTels = Teclado.entero("Cantidad telefonos por alumno: ");
+		maxCalifs = Teclado.entero("Cantidad de calificaciones por alumno: ");
+		
 		do{
-
-			//No se crea constructor de menu, es "static"
-			opcion = Menu.desplegarMenu("1)Insertar\n2)Borrar\n3)Buscar\n4)Actualizar\n5)Listar\nOpcion:\n", 7);
+			System.out.println("\t---------Menu Principal---------");
+			opcion = Menu.desplegarMenu("1)Insertar alumno\n2)Actualizar dato de alumno\n3)Borrar alumno\n4)Listar a todo el grupo\n5)Listar un solo alumno\n6)Salir\nOpcion:\n", 6);
 			switch(opcion){
 
 				//Insertar
@@ -36,7 +33,7 @@ class TestArreglo {
 						System.out.println("Error, no hay espacio en el arreglo :(");
 				break;
 
-				//Actualizar
+				//Actualizar los dato del alumno ingresando nuero de cuenta
 				case 2:
 					dato = Teclado.entero("Ingresa el No. de cuenta: ");
 					pos = miArreglo.buscarDato(dato);
@@ -46,14 +43,14 @@ class TestArreglo {
 						System.out.println("No existe el alumno :(");
 				break;
 				
-				//Borra
+				//Borra alumno segun nuemro de cuenta
 				case 3:
 					dato = Teclado.entero("Numero de cuenta: ");
 					pos = miArreglo.buscarDato(dato);
 					if (pos != -1)
 						miArreglo.borrar(pos);
 					else
-						System.out.println("No esta el dato");
+						System.out.println("No esta el alumno");
 				break;
 
 				//Listar todos los alumnos
@@ -63,23 +60,18 @@ class TestArreglo {
 
 				//Listar un solo alumno
 				case 5:
-					dato = Teclado.entero("Ingresa el No de cuenta del alumono a buscar");
+					dato = Teclado.entero("Ingresa el No de cuenta del alumono a buscar: ");
 					pos = miArreglo.buscarDato(dato);
 					if(pos != -1)
 						miArreglo.listar(pos);
 					else
-						System.out.println("No existe el alumno");
-				break;
-
-				//Ordenar
-				case 6:
-					miArreglo.ordenar();
+						System.out.println("No existe el alumno :(");
 				break;
 
 				default:
 					System.out.println("Opcion incorrecta");
 				break;
 			}
-		}while(opcion != 7);
+		}while(opcion != 6);
 	}
 }

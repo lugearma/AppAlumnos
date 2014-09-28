@@ -47,7 +47,7 @@ class ArregloReal{
 		for(int i = 0; i <= indice; i++)
 			if(arreglo[i] == dato)
 				return i;
-			System.out.println("No existe el alumno");
+			//System.out.println("No existe el alumno");
 			return -1;
 	}
 

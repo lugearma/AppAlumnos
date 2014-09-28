@@ -44,12 +44,12 @@ class ArregloEntero {
 		for(int i = 0; i <= indice; i++)
 			if(arreglo[i] == dato)
 				return i;
-			System.out.println("No existe el alumno");
+			//System.out.println("No existe el alumno");
 			return -1;
 	}
 
 	public void actualizar(int pos){
-		arreglo[pos] = Teclado.entero("Ingresa el dato nuevo");
+		arreglo[pos] = Teclado.entero("Ingresa el nuevo telefono: ");
 		if(arreglo[pos -1] < arreglo[pos] && arreglo[pos] < arreglo[pos + 1] )
 			System.out.println("Listo!");
 		else
@@ -91,7 +91,7 @@ class ArregloEntero {
 	public void compara(int dato){
 		//dato = Teclado.entero("Ingresa el dato");
 		if(buscarDato(dato) != -1)
-			System.out.println("El dato ya esxiste");
+			System.out.println("El telefono ya esxiste");
 		else{
 			indice += 1;
 			arreglo[indice] = dato;

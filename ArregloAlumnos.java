@@ -45,7 +45,7 @@ class ArregloAlumnos {
 			//Checamos si la cuenta existe
 			if(arreglo[i].getCuenta() == dato)
 				return i;
-		System.out.println("No existe el alumno");
+		// System.out.println("No existe el alumno");
 		return -1;
 	}
 
